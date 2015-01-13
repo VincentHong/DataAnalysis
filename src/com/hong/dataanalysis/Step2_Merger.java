@@ -80,8 +80,8 @@ public class Step2_Merger {
 
 		Configuration conf = new Configuration();
 
-		Job job = new Job(conf, "Analysis");
-		job.setJarByClass(Analysis.class);
+		Job job =Job.getInstance(conf, "Step2_Merger");
+		job.setJarByClass(Step2_Merger.class);
 
 		HdfsDAO hdfs = new HdfsDAO("hdfs://192.168.1.206:9000", conf);
 		hdfs.rmr(output);

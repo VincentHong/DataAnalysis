@@ -96,7 +96,7 @@ public class Step5_NodeNUM {
 		String output = "hdfs://namenode:9000/user/flp/" + out;
 
 		Configuration conf = new Configuration();
-		Job job = new Job(conf, "NodeNUM");
+		Job job =  Job.getInstance(conf, "Step5_NodeNUM");
 		job.setJarByClass(Step5_NodeNUM.class);
 
 		HdfsDAO hdfs = new HdfsDAO("hdfs://192.168.1.206:9000", conf);

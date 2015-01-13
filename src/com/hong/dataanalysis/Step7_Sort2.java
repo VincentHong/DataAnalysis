@@ -96,7 +96,7 @@ public class Step7_Sort2 {
 
 		Configuration conf = new Configuration();
 
-		Job job = new Job(conf, "Sort2");
+		Job job =  Job.getInstance(conf, "Step7_Sort2");
 		job.setJarByClass(Step7_Sort2.class);
 
 		HdfsDAO hdfs = new HdfsDAO("hdfs://192.168.1.206:9000", conf);

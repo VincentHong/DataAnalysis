@@ -105,7 +105,7 @@ public class Step6_AddUNM {
 		String output = "hdfs://namenode:9000/user/flp/" + out;
 
 		Configuration conf = new Configuration();
-		Job job = new Job(conf, "AddNUM");
+		Job job =  Job.getInstance(conf, "Step6_AddUNM");
 		job.setJarByClass(Step6_AddUNM.class);
 
 		HdfsDAO hdfs = new HdfsDAO("hdfs://192.168.1.206:9000", conf);

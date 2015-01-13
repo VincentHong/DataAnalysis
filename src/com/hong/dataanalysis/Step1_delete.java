@@ -20,7 +20,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import com.hong.hdfs.HdfsDAO;
 
 
-
 public class Step1_delete {
 
 	public static class DeleteMap extends
@@ -76,8 +75,8 @@ public class Step1_delete {
 
 		Configuration conf = new Configuration();
 
-		Job job = new Job(conf, "Analysis");
-		job.setJarByClass(Analysis.class);
+		Job job =  Job.getInstance(conf, "Step1_delete");
+		job.setJarByClass(Step1_delete.class);
 
 		HdfsDAO hdfs = new HdfsDAO("hdfs://192.168.1.206:9000", conf);
 		hdfs.rmr(output);
